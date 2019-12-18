@@ -1,26 +1,120 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+# SITE CONFIGURATION
+markdown:         CommonMarkGhPages
 
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
+baseurl:          /doctor-haskell/
+                  # the optional subpath of your site, e.g. "/my-jekyll-site/"
+                  # This will apply to all pages in your Jekyll site.
 
-# Setup
-title:            Hyde
+permalink: none
+
+future: true
+service_worker: true
+
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  startings: [head, body]
+
+# PLUGINS
+plugins:
+  - jekyll-avatar
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-default-layout
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-mentions
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-remote-theme
+  - jekyll-sass-converter
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+
+# jekyll-commonmark-ghpages
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+
+# jekyll-mentions
+jekyll-mentions:
+  base_url: https://twitter.com
+
+# jekyll-optional-front-matter
+include:
+  - _pages
+
+# jekyll-paginate
+paginate:         1
+paginate_path:    '/:num'
+
+# jekyll-remote-theme
+#remote_theme: twocolumn/master-rust
+
+# jekyll-seo-tag
+title:            Doctor Haskell # your site title
 tagline:          'A Jekyll theme'
 description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
+url:              / # the base hostname & protocol for your site, e.g. http://example.com
+#author:          Kamil Adam # You :P
+logo:             /assets/img/logo.jpg
+
+social:
+  name: Kamil Adam # You :P
+  links:
+    - https://twitter.com/TheKamilAdam
+    - https://github.com/twocolumn
+    - https://www.linkedin.com/company/writeonly-pl
+    - https://www.facebook.com/WriteOnlyPL
+    - https://www.instagram.com/degustujacaistota/
+#    - https://keybase.io/benbalter
+#    - https://plus.google.com/+BenBalter
+
+# THEME SETTINGS
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
-paginate:         5
+  name:           Kamil Adam
+  url:            https://twitter.com/thekamiladam
 
 # Custom vars
 version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/twocolumn/doctor-haskell
+
+# google_tag_manager: GTM-XXXXXXX # Uncomment to enable GTM. Replace GTM-XXXXXXX with your GTM container ID
+# google_analytics: UA-XXXXXXXXX-X
+
+disqus:
+  shortname: twocolumn # to enable comments replace with your_disqus_shortname
+
+locale: en-US
+json-search: 'search-posts-metas-and-pages'
+
+# SOCIAL LINKS
+social_links:
+  github:  twocolumn
+  linkedin: writeonly-pl
+  facebook: WriteOnlyPL
+  instagram: degustujacaistota
+  twitter: TheKamilAdam
+  rss: rss
+  #  microdotblog: jekyll
+  # dribbble: jekyll
+  # flickr:   jekyll
+  # pinterest: jekyll
+  # youtube: jekyll
+  # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+  # youtube_channel_name: CloudCannon
+  # telegram: jekyll
+  # googleplus: +jekyll
+  # keybase: jekyll
