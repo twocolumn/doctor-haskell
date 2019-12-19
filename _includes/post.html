@@ -1,0 +1,27 @@
+<article class="post">
+  {{ post.content }}
+
+  <footer>
+       <nav class="tags">
+           Autor: @{{post.author}}
+       </nav>
+    <nav class="tags">
+      {% assign tags = post.tags | sort %}
+      Tags:
+      {% for tag in tags %}
+      <a href="{{ site.baseurl }}/posts-by-tags/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </nav>
+
+    <nav class="tags">
+        {% assign labels = post.labels | split: ' ' | sort %}
+        {% assign labels_size = labels | size %}
+        {% if 0 < labels_size %}
+        Labels:
+        {% for label in labels %}
+        <a href="{{ site.baseurl }}/posts-by-labels/{{ label }}">{{ label }}</a>
+        {% endfor %}
+        {% endif %}
+    </nav>
+  </footer>
+</article>

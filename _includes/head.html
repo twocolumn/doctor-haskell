@@ -6,8 +6,11 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+  {% include head-seo.html %}
+  {% include google-analytics.html %}
+
   <title>
-    {% if page.title == "Home" %}
+    {% if page.title == site.data.ui-text[site.locale].home %}
       {{ site.title }} &middot; {{ site.tagline }}
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
@@ -15,15 +18,33 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}assets/css/poole.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}assets/css/syntax.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}assets/css/hyde.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/prestyle.css">
+  <link rel="preload" href="{{ site.baseurl }}/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap">
+  </noscript>
+  <script type="text/javascript">
+   {% include loadCss.js %}
+  </script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}assets/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="{{ site.baseurl }}assets/favicon.ico">
+  <link rel="shortcut icon" href="{{ site.baseurl }}assets/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+  <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery/jquery-3.4.0.min.js"></script>
+
+  <!-- JS -->
+  <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!--  <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>-->
+  <!--  <script defer type="text/javascript" src="https://zeptojs.com/zepto.min.js"></script>-->
+  <!--  <script defer type="text/javascript" src="https://zeptojs.com/zepto.js"></script>-->
+
+  <script defer type="text/javascript" src="{{ site.baseurl }}/assets/js/app.js"></script>
 </head>
