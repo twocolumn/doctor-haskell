@@ -1,0 +1,26 @@
+---
+layout: default
+title: {{ page.tag }}
+---
+<section class="posts">
+  <header>
+    {% include breadcrumbs.html %}
+  </header>
+  <h1 class="posts-title">{{ site.data.ui-text[site.locale].tag }}: {{ page.title }}</h1>
+
+  {{ page.content }}
+
+  <h2>{{ site.data.ui-text[site.locale].tag-posts }} {{ page.title }}:</h2>
+
+  <dl class="posts-nav">
+    {% assign no-show-tags = true %}
+
+    {% for post in site.posts %}
+    {% if post.tags contains page.tag %}
+
+    {% include page-doc.html %}
+
+    {% endif %}
+    {% endfor %}
+  </dl>
+</section>

@@ -1,0 +1,26 @@
+---
+layout: default
+title: {{ page.category }}
+---
+<section class="posts">
+  <header>
+    {% include breadcrumbs.html %}
+  </header>
+  <h1 class="posts-title">{{ site.data.ui-text[site.locale].category }}: {{ page.title }}</h1>
+
+  <i>{{ page.content }}</i>
+
+  <h2>{{ site.data.ui-text[site.locale].category-posts }}:</h2>
+
+  <dl class="posts-nav">
+    {% assign no-show-category = true %}
+
+    {% for post in site.posts %}
+    {% if post.category == page.category %}
+
+    {% include page-doc.html %}
+
+    {% endif %}
+    {% endfor %}
+  </dl>
+</section>

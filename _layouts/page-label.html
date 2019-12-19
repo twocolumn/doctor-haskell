@@ -1,0 +1,30 @@
+---
+layout: default
+title: {{ page.labels }}
+---
+<section class="posts">
+  <header>
+    {% include breadcrumbs.html %}
+    <h1 class="posts-title">Label: {{ page.title }}</h1>
+  </header>
+  <b>{{ page.title }}</b> - {{ page.description }}
+
+  <h2>Posts contain labels:</h2>
+
+  <dl class="posts-nav">
+    {% assign no-show-labels = true %}
+
+    {% for post in site.posts %}
+    {% assign labels = post.labels | split: ' ' %}
+    {% if labels contains page.label %}
+
+    {% include page-doc.html %}
+
+    {% endif %}
+    {% endfor %}
+  </dl>
+
+  <h2> Extra</h2>
+  {{ page.content }}
+
+</section>
