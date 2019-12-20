@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Example content
+category: jekyll
+tags: jekyll
+labels: jekyll
 ---
 
 
