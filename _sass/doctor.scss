@@ -55,3 +55,14 @@ a.posts-nav-item:focus {
 .posts-title {
   margin-top: 0;
 }
+
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+
+.content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
