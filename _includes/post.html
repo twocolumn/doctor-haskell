@@ -2,26 +2,43 @@
   {{ post.content }}
 
   <footer>
-       <nav class="tags">
-           Autor: @{{post.author}}
-       </nav>
+    {% if post.author %}
     <nav class="tags">
-      {% assign tags = post.tags | sort %}
+      Author: @{{post.author}}
+    </nav>
+    {% endif %}
+
+    {% assign tags = post.tags | sort %}
+    {% assign tags_size = tags | size %}
+    {% if 0 < tags_size %}
+    <nav class="tags">
       Tags:
       {% for tag in tags %}
       <a href="{{ site.baseurl }}/posts-by-tags/{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </nav>
+    {% endif %}
 
+    {% assign tags = post.langs | split: ' ' | sort %}
+    {% assign tags_size = tags | size %}
+    {% if 0 < tags_size %}
     <nav class="tags">
-        {% assign labels = post.labels | split: ' ' | sort %}
-        {% assign labels_size = labels | size %}
-        {% if 0 < labels_size %}
-        Labels:
-        {% for label in labels %}
-        <a href="{{ site.baseurl }}/posts-by-labels/{{ label }}">{{ label }}</a>
-        {% endfor %}
-        {% endif %}
+      Labels:
+      {% for tag in tags %}
+      <a href="{{ site.baseurl }}/posts-by-langs/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
     </nav>
+    {% endif %}
+
+    {% assign tags = post.libs | split: ' ' | sort %}
+    {% assign tags_size = tags | size %}
+    {% if 0 < tags_size %}
+    <nav class="tags">
+      Labels:
+      {% for tag in tags %}
+      <a href="{{ site.baseurl }}/posts-by-libs/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </nav>
+    {% endif %}
   </footer>
 </article>
