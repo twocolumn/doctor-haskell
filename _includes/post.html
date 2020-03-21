@@ -23,7 +23,7 @@
     {% assign tags_size = tags | size %}
     {% if 0 < tags_size %}
     <nav class="tags">
-      Labels:
+      Languages:
       {% for tag in tags %}
       <a href="{{ site.baseurl }}/posts-by-langs/{{ tag }}">{{ tag }}</a>
       {% endfor %}
@@ -34,7 +34,7 @@
     {% assign tags_size = tags | size %}
     {% if 0 < tags_size %}
     <nav class="tags">
-      Labels:
+      Libraries:
       {% for tag in tags %}
       <a href="{{ site.baseurl }}/posts-by-libs/{{ tag }}">{{ tag }}</a>
       {% endfor %}
