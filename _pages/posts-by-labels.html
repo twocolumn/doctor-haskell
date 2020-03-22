@@ -4,7 +4,7 @@ title: Posts by labels
 permalink: /posts-by-labels/
 description: Posts by labels
 ---
-{% include group-by-array.html collection=site.posts field="labels" %}
+{% include group-by-array collection=site.posts field="labels" %}
 <div class="posts">
   <dl class="posts-nav">
     {% for name in group_names %}
