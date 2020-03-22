@@ -30,6 +30,17 @@
     </nav>
     {% endif %}
 
+    {% assign tags = post.tools | split: ' ' | sort %}
+    {% assign tags_size = tags | size %}
+    {% if 0 < tags_size %}
+    <nav class="tags">
+      Tools:
+      {% for tag in tags %}
+      <a href="{{ site.baseurl }}/posts-by-tools/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </nav>
+
+    {% endif %}
     {% assign tags = post.libs | split: ' ' | sort %}
     {% assign tags_size = tags | size %}
     {% if 0 < tags_size %}
