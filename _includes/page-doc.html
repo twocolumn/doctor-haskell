@@ -34,6 +34,19 @@
     {% endunless %}
 
     {% unless no-show-libs %}
+      {% assign libs = post.tools | split: ' ' | sort %}
+      {% assign libs_size = libs | size %}
+      {% if 0 < libs_size %}
+      <li>
+        Narszędzia programistyczne:
+        {% for lib in libs %}
+        <a href="{{ site.baseurl }}/posts-by-tools/{{ lib }}">{{ lib }}</a>
+        {% endfor %}
+      </li>
+      {% endif %}
+    {% endunless %}
+
+    {% unless no-show-libs %}
       {% assign libs = post.libs | split: ' ' | sort %}
       {% assign libs_size = libs | size %}
       {% if 0 < libs_size %}
@@ -46,6 +59,6 @@
       {% endif %}
     {% endunless %}
 
-  </ul>
+</ul>
 </dd>
 
