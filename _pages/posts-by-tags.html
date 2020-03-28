@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Posts by tags
-permalink: /posts-by-tags/
+permalink: /tags/
 description: Posts by tags
 ---
 {% include group-by-array collection=site.posts field="tags" %}
@@ -11,7 +11,7 @@ description: Posts by tags
     {% assign posts = group_items[forloop.index0] %}
     <dt>
       <h2>
-        <a href="{{ site.baseurl }}/posts-by-tags/{{ name}}">{{ name }}</a>
+        <a href="{{ site.baseurl }}/tags/{{ name}}">{{ name }}</a>
       </h2>
     </dt>
     <dd>

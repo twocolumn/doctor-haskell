@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Posts by labels
-permalink: /posts-by-labels/
+permalink: /labels/
 description: Posts by labels
 ---
 {% include group-by-array collection=site.posts field="labels" %}
@@ -11,7 +11,7 @@ description: Posts by labels
     {% assign posts = group_items[forloop.index0] %}
     <dt>
       <h2>
-        <a href="{{ site.baseurl }}/posts-by-labels/{{ name }}">{{ name | capitalize }}</a>
+        <a href="{{ site.baseurl }}/labels/{{ name }}">{{ name | capitalize }}</a>
       </h2>
     </dt>
     <dd>

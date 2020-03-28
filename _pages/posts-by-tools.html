@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Posts by tools
-permalink: /posts-by-tools/
+permalink: /tools/
 description: Posts by tools
 ---
 {% include group-by-array collection=site.posts field="tools" %}
@@ -11,7 +11,7 @@ description: Posts by tools
     {% assign posts = group_items[forloop.index0] %}
     <dt>
       <h2>
-        <a href="{{ site.baseurl }}/posts-by-tools/{{ name }}">{{ name | capitalize }}</a>
+        <a href="{{ site.baseurl }}/tools/{{ name }}">{{ name | capitalize }}</a>
       </h2>
     </dt>
     <dd>
