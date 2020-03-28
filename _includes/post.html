@@ -14,7 +14,7 @@
     <nav class="tags">
       Tags:
       {% for tag in tags %}
-      <a href="{{ site.baseurl }}/posts-by-tags/{{ tag }}">{{ tag }}</a>
+      <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </nav>
     {% endif %}
@@ -25,7 +25,7 @@
     <nav class="tags">
       Languages:
       {% for tag in tags %}
-      <a href="{{ site.baseurl }}/posts-by-langs/{{ tag }}">{{ tag }}</a>
+      <a href="{{ site.baseurl }}/langs/{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </nav>
     {% endif %}
@@ -36,7 +36,7 @@
     <nav class="tags">
       Tools:
       {% for tag in tags %}
-      <a href="{{ site.baseurl }}/posts-by-tools/{{ tag }}">{{ tag }}</a>
+      <a href="{{ site.baseurl }}/tools/{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </nav>
 
@@ -47,7 +47,7 @@
     <nav class="tags">
       Libraries:
       {% for tag in tags %}
-      <a href="{{ site.baseurl }}/posts-by-libs/{{ tag }}">{{ tag }}</a>
+      <a href="{{ site.baseurl }}/libs/{{ tag }}">{{ tag }}</a>
       {% endfor %}
     </nav>
     {% endif %}

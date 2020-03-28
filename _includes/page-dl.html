@@ -15,7 +15,7 @@
     {% unless no-show-category %}
       <li>
         Kategoria :
-        <a href="{{ site.baseurl }}/posts-by-category/{{ post.category }}">{{ post.category | capitalize }}</a>
+        <a href="{{ site.baseurl }}/category/{{ post.category }}">{{ post.category | capitalize }}</a>
       </li>
     {% endunless %}
 
@@ -24,7 +24,7 @@
         {% assign tags = post.tags | sort %}
         Tagi:
         {% for tag in tags %}
-        <a href="{{ site.baseurl }}/posts-by-tags/{{ tag }}">{{ tag }}</a>
+        <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
         {% endfor %}
       </li>
     {% endunless %}
@@ -36,7 +36,7 @@
       <li>
         Języki programowania:
         {% for lang in langs %}
-        <a href="{{ site.baseurl }}/posts-by-langs/{{ lang }}">{{ lang }}</a>
+        <a href="{{ site.baseurl }}/langs/{{ lang }}">{{ lang }}</a>
         {% endfor %}
       </li>
       {% endif %}
@@ -49,7 +49,7 @@
       <li>
         Biblioteki programistyczne:
         {% for lib in libs %}
-        <a href="{{ site.baseurl }}/posts-by-libs/{{ lib }}">{{ lib }}</a>
+        <a href="{{ site.baseurl }}/libs/{{ lib }}">{{ lib }}</a>
         {% endfor %}
       </li>
       {% endif %}
