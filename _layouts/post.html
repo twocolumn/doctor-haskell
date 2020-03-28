@@ -5,8 +5,8 @@ layout: default
 <section>
   <header class="topbar">
     <a href="{{ site.baseurl }}/"> {{ site.title }} </a> /
-    <a href="{{ site.baseurl }}/posts-by-category/"> Posts by category </a> /
-    <a href="{{ site.baseurl }}/posts-by-category/{{ page.category }}">{{ page.category | capitalize }}</a> / {{ post.title }}
+    <a href="{{ site.baseurl }}/category/"> Posts by category </a> /
+    <a href="{{ site.baseurl }}/category/{{ page.category }}">{{ page.category | capitalize }}</a> / {{ post.title }}
 
     <h1 class="post-title">{{ post.title }}</h1>
     {% include reading-time.html %}
